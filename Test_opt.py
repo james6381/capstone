@@ -33,3 +33,8 @@ beq1 = matrix(beq)
 
 sol = solvers.lp(c1, A1, b1, Aeq1, beq1)
 print(sol['x'])
+# Solution : [-3.00e+00][-2.00e+00][ 4.00e+00][ 1.00e+00]
+
+sol_np =np.array(sol['x'])
+print(sol_np)
+# Solution : [[-2.99999996][-2.        ][ 4.        ][ 1.        ]]
