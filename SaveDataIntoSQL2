@@ -1,0 +1,8 @@
+import pandas as pd
+df = pd.read_csv('C:\\Users\\james\\Desktop\\Book11.csv') #
+df.columns = [c.lower() for c in df.columns] #postgres doesn't like capitals or spaces
+
+from sqlalchemy import create_engine
+engine = create_engine('postgresql://postgres:woshizxm1234@localhost:5432/capstone')
+
+df.to_sql("my_table_name1", engine)

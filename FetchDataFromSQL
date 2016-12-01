@@ -1,0 +1,16 @@
+import psycopg2
+import psycopg2.extras
+
+
+def main():
+    conn_string = "host='localhost' dbname = 'capstone' user = 'postgres' password = 'woshizxm1234'"
+    conn = psycopg2.connect(conn_string)
+
+    cursor = conn.cursor('dataCursor', cursor_factory=psycopg2.extras.DictCursor)
+    cursor.execute('SELECT * FROM  my_table_name1 LIMIT 1000')
+
+    records = cursor.fetchall()
+    import pprint
+    pprint.pprint(records)
+if __name__ == "__main__":
+        main()
